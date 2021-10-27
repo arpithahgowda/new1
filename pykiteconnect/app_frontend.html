@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  	<link rel="stylesheet" href="{{ url_for('static', filename='asset_code.css') }}">
+	</head>
+	<body>
+		<h1>Predict Code</h1>
+
+			<form action="http://localhost:5000/predict" method="POST">
+				<label form="description">Token:</label>
+				<input type="text" id="token" name="token">
+				<div>
+				<label form="description">Expiry:</label>
+				<input type="text" id="expiry" name="expiry"></div>
+				<label form="description">hedge:</label>
+				<input type="checkbox" name="hedge"/>
+				<label form="description">straddle:</label>
+				<input type="checkbox" name="straddle" checked/>
+				<button type="submit" class=cv_btn>runscript</button>
+
+			</form>
+			<br>
+			<br>
+			Prediction: {{ prediction_text }}
+
+	</body>
+</html>
